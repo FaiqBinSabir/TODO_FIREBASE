@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+<body>
+   
+    <div class="contain" id="signup" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9q1Jr4r5jtZT6Nv4teZUtSYn77adGk7XiA&usqp=CAU" alt="" class="logo">
+        <h2>Sign-Up</h2>
+       
+        <form action="" id="singupform" >
+    
+    
+            <div class="form-group">
+                <label for="username"> <i class="fa-solid fa-user-pen"></i> Email:</label>
+                <input type="text" id="signupemail" name="username" required placeholder="enter email" >
+            </div>
+            
+            <span class="err" id="errormsgemail"> * Plese use @ .com  in email </span> 
+    
+            <div class="form-group">
+                <label for="password"> <i class="fa-solid fa-lock"></i> UserName:</label>
+                <input type="text" id="UserName" name="password" required placeholder="Enter UserName">
+            </div>
+            
+            <div class="form-group">
+                <label for="password"> <i class="fa-solid fa-lock"></i> Password:</label>
+                <input type="password" id="signuppassword" name="password" required placeholder="enter password(min 8 characters)">
+            </div>
+            
+            
+            <span class="err" id="errormsglenght"> * password must be greater than 8 </span> 
+            <span class="err" id="errorpasswordsignin"> * Plese enter password </span> 
+           
+            
+            <div class="form-group">
+                <button type="submit" class="button" id="newid" >&nbsp;&nbsp;&nbsp;Sign-up&nbsp;&nbsp;&nbsp;</button>
+            </div>
+            <div class="form-group signup-link">
+                Already have an account? <a href="./Login.html" id="sign" >Login</a>
+    
+            </div>
+            
+        </form>
+    </div>
+    
+    </div>
+
+
+    
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <script src="./Signup.js" type="module"></script> 
+</body>
+</html>

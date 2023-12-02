@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="Scirpt.js"></script>
+  <title>DashBoard</title>
+  <link rel="stylesheet" href="Dash.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body style="background-color: black;">
+
+
+
+
+
+
+  <div class="container1">
+    <div class="container11">
+
+      <div class="child111">
+
+        <div class="userdata">
+          <i class="fa-solid fa-user   logo"></i>
+
+          <div id="username">
+            User 
+          </div>
+
+
+
+
+        </div>
+
+
+        <div class="taskdetails">
+
+          <div id="totaltask">
+            <center>
+              <h1 id="totaltask"> 0 </h1>
+              <p class="text"> Total Tasks</p>
+            </center>
+
+          </div>
+
+        </div>
+
+        <div class="taskdetails">
+
+          <div id="totaltask">
+            <center>
+              <h1 id="primarytask"> - </h1>
+              <p class="text"> TODOS</p>
+            </center>
+
+          </div>
+
+        </div>
+
+        <div class="collab">
+
+          <div id="totaltask">
+            <center>
+              <i class="fa-solid fa-circle-exclamation  nodata"></i>
+
+              <p>No Data Found</p>
+              <p class="text"> Collab</p>
+            </center>
+
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <!-- first childs ends -->
+
+      <div class="child112">
+
+
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">TODO System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ms-auto ">
+                <li class="nav-item">
+                  <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-2" href="#" id="Logout">Logout</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Company
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="#">About Us</a></li>
+                    <li><a class="dropdown-item" href="#">Contact us</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="childtodotask">
+
+          <label for="text" class="dt"> My TODO Tasks</label><br>
+          <input type="text" id="todoitem" placeholder="Enter Here" class="dt">
+
+          <button class="add" id="additem">Add</button>
+          <br>
+
+          <div id="displayedtodo">
+
+
+            <ul id="listcontainer">
+              <!-- 
+                  <li class="checked">Task 1</li>
+                  <li>Task 2</li>
+                  <li>Task 3</li>
+                  <li>Task 4</li> -->
+                </ul> 
+
+          </div>
+
+          <div class="pagination">
+            <button id="previous">
+              prev
+            </button>
+            <button id="page1"> &nbsp;&nbsp;1&nbsp;&nbsp;</button>
+            <button id="page2"> &nbsp;&nbsp;2&nbsp;&nbsp;</button>
+            <button id="page3">&nbsp;&nbsp; 3&nbsp;&nbsp;</button>
+
+            <button id="next"> next</button>
+          </div>
+       
+        </div>
+
+      </div>
+      
+
+      
+
+
+    </div>
+
+  
+
+
+
+  </div>
+
+
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script type="module" src="./Todo.js"></script>
+
+</html>

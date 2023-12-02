@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg);
+  background-size: cover;
+  
+  }
+  
+  .contain  {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVPCXDd2S8zEDot2vceqiKzNJcTf5JfM36bQ&usqp=CAU");
+    background-size: contain;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 40px;
+    
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .logo{
+     border-radius: 50%;
+     height: 100px;
+  }
+  
+  .container h2 {
+    margin-bottom: 20px;
+    color: blue;
+  
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #00ffef;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+    
+  
+  }
+  .button:hover{
+  
+    background: white;
+    color: blue;
+    font-weight: bolder;
+    border: 1px solid black;
+    transform: scale(1.25);
+  }
+  .form-group input:hover{
+    transform: scale(1.05);
+    border: 1px solid grey;
+  
+  }
+  
+  
+  .hidden-div {
+   /* Initially hidden */
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .err{
+    font-size: 15px;
+    border: 1px solid red;
+  background: red;
+    color: white;
+    margin-top: 0px !important;
+  display: none;
+  margin-bottom: 10px !important;
+  
+  }
+  
+  #sign,#log{
+    color: rgb(80, 246, 71);
+  }
+  
+    
+  #googlelogin{
+
+    border: 1px solid blue;
+
+    font-weight: bolder;
+    background: rgb(200, 222, 230);
+    color: green;
+    padding: 10px;
+
+  }
+
+#googlelogin:hover{
+
+  background: white;
+    color: green;
+    font-weight: bolder;
+    border: 1px solid black;
+    transform: scale(1.25);
+}
+  /*  Dash board todo task  */
+  

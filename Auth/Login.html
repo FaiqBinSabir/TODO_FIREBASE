@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+<body>
+    <div class="contain" id="login">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9q1Jr4r5jtZT6Nv4teZUtSYn77adGk7XiA&usqp=CAU" alt="" class="logo">
+        <h2>Login</h2>
+       
+        <form action="" >
+  
+  
+            <div class="form-group">
+                <label for="username"> <i class="fa-solid fa-user-pen"></i> Email:</label>
+                <input type="text" id="loginemail" name="username" required placeholder="enter email" >
+               
+            </div>
+            
+            <span class="err" id="errormsgemaillogin"> * Plese use @ .com  in email </span> 
+            <div class="form-group">
+                <label for="password"> <i class="fa-solid fa-lock"></i> Password:</label>
+                <input type="password" id="loginpassword" name="password" required placeholder="enter password(min 8 characters)">
+            </div>
+            
+            <span class="err" id="errorpasswordlogin"> * Plese enter password </span> 
+            <div class="form-group">
+                <button type="submit" class="button"  id = "loginbtn">&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</button>
+            </div>
+            
+            <span class="err" id="dat"> no data found  </span>
+            <div class="form-group signup-link">
+                Don't have an account? <a href="./Signup.html" id="log" >Sign up</a>
+            </div>
+            
+            
+            <button id="googlelogin"> <i class="fa-brands fa-google"></i> &nbsp;&nbsp;login with google</button>
+        </form>
+    </div>
+  
+  
+   
+    <script src="./Login.js" type="module"></script> 
+   
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
