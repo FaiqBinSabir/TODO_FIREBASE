@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
 import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-import { getFirestore, doc, updateDoc, collection, addDoc, query, where, getDocs, limit } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+import { getFirestore, doc, updateDoc, collection, addDoc, query,deleteDoc, where, getDocs, limit } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJjW_hDCel2QZxmMeGkuhze0-cS5icgNg",
@@ -23,16 +23,41 @@ let limitdata = null;
 let skipdata = null;
 let userdata = null;
 
+
 const getVal = async (limits) => {
 
   console.log(limits);
   const q = query(collection(db, "todos"), where("userid", "==", userdata), limit(limits));
+  const v = query(collection(db, "todos"), where("userid", "==", userdata));
+  console.log(v);
   const querySnapshot = await getDocs(q);
+  const querySd = await getDocs(v);
+
+  let totaltodo = 0;
+  let completed = 0;
+  querySd.forEach((doc) => {
+totaltodo++;
+
+if (doc.data().status === "complete") {
+  
+completed++;
+}
+    
+  })
+  console.log("completed",completed);
+  console.log(totaltodo);
+  let totaltaskss = document.getElementById("totaltasks")
+  totaltaskss.innerHTML = totaltodo;
+  let d = document.getElementById("primarytask")
+  d.innerText = completed;
 
   document.getElementById('listcontainer').style.display = "none";
 var numb = 0;
   querySnapshot.forEach((doc) => {
+
+  
 numb++;
+
     var newItem = document.createElement("li");
     var textNode = document.createTextNode(doc.data().todoTask);
     // console.log( "todo id =>" ,doc.id);
@@ -45,8 +70,12 @@ numb++;
     document.getElementById("listcontainer").appendChild(newItem);
 
     let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
+    let span1 = document.createElement("button");
+span1.className = "btn"
+    span.innerHTML = "\u2026";
+   span1.innerHTML = "\u00d7";
     newItem.appendChild(span);
+    newItem.appendChild(span1);
     newItem.id = doc.id
 
 
@@ -57,11 +86,14 @@ numb++;
 
   });
 
-  let d = document.getElementById("primarytask")
-d.innerText = numb;
+
   document.getElementById('listcontainer').style.display = "block";
 };
+viewtodo.addEventListener("click",()=>{
 
+  location.reload();
+  getVal(5);
+})
 
 
 
@@ -87,7 +119,7 @@ ListContainerr.addEventListener("click", async function (e) {
   else if (e.target.tagName === "SPAN") {
 
    let idd =  e.target.parentNode.id;
-   e.target.parentNode.classList.toggle("checked");
+   e.target.parentNode.classList.remove("checked");
     const docRef = doc(db, "todos", idd);
 
     await updateDoc(docRef, {
@@ -95,9 +127,26 @@ ListContainerr.addEventListener("click", async function (e) {
     });
 
   }
+  else if (e.target.tagName === "BUTTON"){
+
+    let data=  e.target.parentNode.id;
+
+    
 
 
-});
+      await deleteDoc(doc(db, "todos", data));
+      console.log("deleted");
+     
+  
+      
+        
+      }
+    });
+      
+      
+      
+      
+  
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -115,9 +164,9 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
-// setTimeout(() => {
-//   getVal();
-// }, 1000);
+ setTimeout(() => {
+  getVal(5);
+}, 1000);
 let additem = document.getElementById("additem");
 
 additem.addEventListener("click", async () => {
@@ -135,13 +184,11 @@ additem.addEventListener("click", async () => {
         userid: userdata,
         status: "incomplete",
 
-      }).then(
+      }).then( async () => {
 
-        () => {
+        
 
-
-          // location.reload()
-          getVal(5);
+          location.reload();
         }
       );
 
@@ -176,12 +223,12 @@ page2.addEventListener("click", () => {
 
 
   limitdata = 5;
-  skipdata = limitdata + 1;
   getVal(limitdata);
 
 
 
 })
+
 
 
 

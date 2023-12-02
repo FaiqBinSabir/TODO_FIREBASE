@@ -287,6 +287,27 @@ body{
      
   
   }
+
+  ul#listcontainer li button{
+    
+    position: absolute;
+    right: 60px;
+    color: black;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+     border-radius: 50%; 
+     color: white;
+     background: red;
+     display: flex;
+     justify-content: center;
+  
+     align-items: center;
+  }
+  
   
   ul#listcontainer li span:hover{
   
